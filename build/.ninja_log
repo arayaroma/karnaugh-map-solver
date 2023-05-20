@@ -1,8 +1,0 @@
-# ninja log v5
-1	211	1684569433070241551	CMakeFiles/karnaugh-map-solver.dir/main.cpp.o	2fcedc4a6d719510
-0	200	1684569739281764928	CMakeFiles/karnaugh-map-solver.dir/src/main.cpp.o	e64547943cbef04c
-201	244	1684569739325098543	karnaugh-map-solver	41e431ecb395bb41
-1	206	1684570235098766424	CMakeFiles/karnaugh-map-solver.dir/src/main.cpp.o	85c9dbd048225e5d
-206	251	1684570235145433458	karnaugh-map-solver	41e431ecb395bb41
-1	215	1684570470360668523	CMakeFiles/karnaugh-map-solver.dir/src/main.cpp.o	85c9dbd048225e5d
-215	259	1684570470404002237	karnaugh-map-solver	41e431ecb395bb41
