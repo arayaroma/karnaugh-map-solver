@@ -217,11 +217,12 @@ build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
 
 build cmake_object_order_depends_target_karnaugh-map-solver: phony || CMakeFiles/karnaugh-map-solver.dir
 
-build CMakeFiles/karnaugh-map-solver.dir/main.cpp.o: CXX_COMPILER__karnaugh-map-solver_unscanned_Debug /home/araya/Repositories/karnaugh-map-solver/main.cpp || cmake_object_order_depends_target_karnaugh-map-solver
-  DEP_FILE = CMakeFiles/karnaugh-map-solver.dir/main.cpp.o.d
+build CMakeFiles/karnaugh-map-solver.dir/src/main.cpp.o: CXX_COMPILER__karnaugh-map-solver_unscanned_Debug /home/araya/Repositories/karnaugh-map-solver/src/main.cpp || cmake_object_order_depends_target_karnaugh-map-solver
+  DEP_FILE = CMakeFiles/karnaugh-map-solver.dir/src/main.cpp.o.d
   FLAGS = -g
+  INCLUDES = -I/home/araya/Repositories/karnaugh-map-solver/include
   OBJECT_DIR = CMakeFiles/karnaugh-map-solver.dir
-  OBJECT_FILE_DIR = CMakeFiles/karnaugh-map-solver.dir
+  OBJECT_FILE_DIR = CMakeFiles/karnaugh-map-solver.dir/src
 
 
 # =============================================================================
@@ -231,7 +232,7 @@ build CMakeFiles/karnaugh-map-solver.dir/main.cpp.o: CXX_COMPILER__karnaugh-map-
 #############################################
 # Link the executable karnaugh-map-solver
 
-build karnaugh-map-solver: CXX_EXECUTABLE_LINKER__karnaugh-map-solver_Debug CMakeFiles/karnaugh-map-solver.dir/main.cpp.o
+build karnaugh-map-solver: CXX_EXECUTABLE_LINKER__karnaugh-map-solver_Debug CMakeFiles/karnaugh-map-solver.dir/src/main.cpp.o
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   OBJECT_DIR = CMakeFiles/karnaugh-map-solver.dir
