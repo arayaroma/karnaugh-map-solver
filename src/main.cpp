@@ -1,5 +1,5 @@
+#include "../include/karnaugh.hpp"
 #include <iostream>
-#include "karnaugh.cpp"
 
 int main() {
   Karnaugh karnaugh;
