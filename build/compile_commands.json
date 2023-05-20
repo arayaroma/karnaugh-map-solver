@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/araya/Repositories/karnaugh-map-solver/build",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/karnaugh-map-solver.dir/main.cpp.o -c /home/araya/Repositories/karnaugh-map-solver/main.cpp",
+  "file": "/home/araya/Repositories/karnaugh-map-solver/main.cpp",
+  "output": "CMakeFiles/karnaugh-map-solver.dir/main.cpp.o"
+}
+]
