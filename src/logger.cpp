@@ -5,7 +5,7 @@ Logger::~Logger() {}
 
 void Logger::log(std::string message) { std::cout << message; }
 void Logger::showInput() { std::cout << input << std::endl; }
-std::string Logger::getInput() { return input; }
+std::string Logger::getInput() const { return input; }
 
 void Logger::getInput(std::string message) {
   std::cin >> message;

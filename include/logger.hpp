@@ -12,7 +12,7 @@ public:
 
   void log(std::string message);
   void getInput(std::string message);
-  std::string getInput();
+  std::string getInput() const;
   void showInput();
   void exitProgram(std::string message);
   void clearScreen();
