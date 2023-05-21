@@ -1,13 +1,18 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 class Karnaugh {
 private:
-    int m_rows; 
-    int m_cols;
+  int rows, cols;
+  bool m_isFourVariable;
+
 public:
   Karnaugh();
   ~Karnaugh();
 
-  void sayHello();
+  std::string createFourVariableMap(); 
+  std::string createFiveVariableMap();
+  bool isFourVariable(std::string message);
+  
 };

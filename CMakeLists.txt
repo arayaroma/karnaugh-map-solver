@@ -9,7 +9,7 @@ enable_testing()
 file(GLOB SOURCES "src/*.cpp")
 
 add_executable(karnaugh-map-solver ${SOURCES})
-target_include_directories(karnaugh-map-solver PRIVATE include)
+target_include_directories(karnaugh-map-solver PUBLIC include)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
