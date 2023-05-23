@@ -1,3 +1,5 @@
-.cache/*
-/build/
-.vscode/*
+# Generated files
+/target/
+
+# Dependenct lock file
+Cargo.lock
