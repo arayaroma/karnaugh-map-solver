@@ -1,12 +1,14 @@
 use std::process::exit;
 
-mod file_reader;
+mod util {
+    pub mod file_reader;
+    pub mod logger;
+}
 mod karnaugh;
-mod logger;
 
-use file_reader::FileReader;
 use karnaugh::Karnaugh;
-use logger::Logger;
+use util::file_reader::FileReader;
+use util::logger::Logger;
 
 fn main() {
     let logger_instance = Logger::new();

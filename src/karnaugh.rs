@@ -1,4 +1,4 @@
-use crate::logger::Logger;
+use crate::Logger;
 
 pub struct Karnaugh {
     rows: u8,
