@@ -1,27 +1,30 @@
 use std::process::exit;
 
+mod file_reader;
 mod karnaugh;
 mod logger;
 
+use file_reader::FileReader;
 use karnaugh::Karnaugh;
 use logger::Logger;
 
 fn main() {
-    let mut logger = Logger::new();
-    logger.log("+------------------------+");
-    logger.log("|  Karnaugh Map Solver   |");
-    logger.log("+------------------------+\n");
-    logger.log("Enter the number of variables (4 or 5): ");
-    logger.log("\nyou can exit the program by typing 'q'\n");
-    logger.process_input(">> ");
-    logger.log(&format!("You entered: {}\n", logger.get_input()));
+    let logger_instance = Logger::new();
+    //logger_instance.show_menu();
+    //logger_instance.process_input(">> ");
+    //logger_instance.log(&format!("You entered: {}\n", logger_instance.get_input()));
 
-    let mut karnaugh = Karnaugh::new();
-    if karnaugh.is_four_variable(logger.get_input()) {
-        logger.log(&karnaugh.create_four_variable_map());
+    //let mut karnaugh_instance = Karnaugh::new();
+    //karnaugh_instance.assign_map(&logger_instance, logger_instance.get_input());
+
+    let mut file_reader_instance = FileReader::new();
+    if let Err(err) = file_reader_instance.read_file(String::from("data/test1.txt")) {
+        println!("Error reading file: {}", err);
     } else {
-        logger.log(&karnaugh.create_five_variable_map());
+        file_reader_instance.log_file();
     }
+    //logger_instance.log(file_reader_instance.extract_variables().join(", ").as_str());
+    //logger_instance.log(file_reader_instance.get_variables().join(", ").as_str());
 
     exit(0);
 }

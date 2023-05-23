@@ -1,6 +1,8 @@
+use crate::logger::Logger;
+
 pub struct Karnaugh {
-    rows: u32,
-    cols: u32,
+    rows: u8,
+    cols: u8,
     is_four_variable: bool,
 }
 
@@ -13,12 +15,20 @@ impl Karnaugh {
         }
     }
 
+    pub fn set_four_variable(&mut self) {
+        self.is_four_variable = true;
+    }
+
     pub fn is_four_variable(&mut self, message: &str) -> bool {
-        if message == "4" {
-            self.is_four_variable = true;
-            true
+        message == "4"
+    }
+
+    pub fn assign_map(&mut self, logger: &Logger, input: &str) {
+        if self.is_four_variable(input) {
+            self.set_four_variable();
+            logger.log(&self.create_four_variable_map());
         } else {
-            false
+            logger.log(&self.create_five_variable_map());
         }
     }
 

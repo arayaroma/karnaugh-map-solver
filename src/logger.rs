@@ -15,6 +15,14 @@ impl Logger {
         println!("{}", message);
     }
 
+    pub fn show_menu(&self) {
+        self.log("+--------------------------------------+");
+        self.log("|          Karnaugh Map Solver         |");
+        self.log("+--------------------------------------+\n");
+        self.log("Enter the number of variables (4 or 5): ");
+        self.log("\nyou can exit the program by typing 'q'\n");
+    }
+
     pub fn get_input(&self) -> &str {
         &self.input
     }
