@@ -29,7 +29,7 @@ impl ExpressionData {
         println!("Variables: {:?}", self.variables);
     }
 
-    pub fn extract_variables(&mut self) {
+    fn extract_variables(&mut self) {
         let variables: Vec<&str> = Self::trim_variables(self.get_expression());
         let variables_owned: Vec<String> = variables.iter().map(|&var| var.to_string()).collect();
         self.variables = variables_owned;
@@ -49,13 +49,13 @@ impl ExpressionData {
         println!("Terms: {:?}", self.terms);
     }
 
-    pub fn extract_terms(&mut self) {
+    fn extract_terms(&mut self) {
         let terms: Vec<&str> = Self::trim_terms(self.get_expression());
         let terms_owned: Vec<String> = terms.iter().map(|&term| term.to_string()).collect();
         self.terms = terms_owned;
     }
 
-    pub fn trim_terms(expression: &str) -> Vec<&str> {
+    fn trim_terms(expression: &str) -> Vec<&str> {
         if let Some(sum) = expression.find("sum(") {
             if let Some(parentheses_end) = expression.rfind(')') {
                 let terms_str = &expression[sum + 4..parentheses_end];
@@ -68,5 +68,4 @@ impl ExpressionData {
     pub fn get_expression(&self) -> &String {
         &self.expression
     }
-  
 }
