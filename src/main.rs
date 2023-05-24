@@ -4,6 +4,8 @@ mod util {
     pub mod file_reader;
     pub mod logger;
 }
+
+mod expression_data;
 mod karnaugh;
 
 use karnaugh::Karnaugh;
@@ -11,7 +13,7 @@ use util::file_reader::FileReader;
 use util::logger::Logger;
 
 fn main() {
-    let logger_instance = Logger::new();
+    //let logger_instance = Logger::new();
     //logger_instance.show_menu();
     //logger_instance.process_input(">> ");
     //logger_instance.log(&format!("You entered: {}\n", logger_instance.get_input()));
@@ -20,13 +22,15 @@ fn main() {
     //karnaugh_instance.assign_map(&logger_instance, logger_instance.get_input());
 
     let mut file_reader_instance = FileReader::new();
-    if let Err(err) = file_reader_instance.read_file(String::from("data/test1.txt")) {
+    let file_path = String::from("data/test1.txt");
+
+    if let Err(err) = file_reader_instance.read_file(file_path) {
         println!("Error reading file: {}", err);
     } else {
-        file_reader_instance.log_file();
+        file_reader_instance.expression_data.show_expression();
+        file_reader_instance.expression_data.show_variables();
+        file_reader_instance.expression_data.show_terms();
     }
-    //logger_instance.log(file_reader_instance.extract_variables().join(", ").as_str());
-    //logger_instance.log(file_reader_instance.get_variables().join(", ").as_str());
 
     exit(0);
 }
