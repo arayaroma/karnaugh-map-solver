@@ -32,6 +32,7 @@ impl Karnaugh {
         }
     }
 
+    #[allow(dead_code)]
     pub fn create_four_variable_map(&self) -> String {
         let mut karnaugh_map = String::new();
         if self.is_four_variable {
@@ -50,6 +51,7 @@ impl Karnaugh {
         karnaugh_map
     }
 
+    #[allow(dead_code)]
     pub fn create_five_variable_map(&self) -> String {
         let mut karnaugh_map = String::new();
         if !self.is_four_variable {

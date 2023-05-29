@@ -13,8 +13,12 @@ impl ExpressionData {
         }
     }
 
+    pub fn get_expression(&self) -> &String {
+        &self.expression
+    }
+
     pub fn show_expression(&self) {
-        println!("Expression: {}", self.expression);
+        println!("Expression: {}", self.get_expression());
     }
 
     pub fn extract_expression(&mut self, lines: Vec<String>) {
@@ -25,8 +29,12 @@ impl ExpressionData {
         self.extract_terms();
     }
 
+    pub fn get_variables(&self) -> &Vec<String> {
+        &self.variables
+    }
+
     pub fn show_variables(&self) {
-        println!("Variables: {:?}", self.variables);
+        println!("Variables: {:?}", self.get_variables());
     }
 
     fn extract_variables(&mut self) {
@@ -45,8 +53,12 @@ impl ExpressionData {
         Vec::new()
     }
 
+    pub fn get_terms(&self) -> &Vec<String> {
+        &self.terms
+    }
+
     pub fn show_terms(&self) {
-        println!("Terms: {:?}", self.terms);
+        println!("Terms: {:?}", self.get_terms());
     }
 
     fn extract_terms(&mut self) {
@@ -63,9 +75,5 @@ impl ExpressionData {
             }
         }
         Vec::new()
-    }
-
-    pub fn get_expression(&self) -> &String {
-        &self.expression
     }
 }
