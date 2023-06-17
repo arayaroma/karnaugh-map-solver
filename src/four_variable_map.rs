@@ -35,6 +35,7 @@ impl FourVariableMap {
         }
     }
 
+    #[allow(dead_code)]
     pub fn show_populated_matrix(&self) {
         for row in &self.matrix {
             println!("{:?}", row);
@@ -43,22 +44,22 @@ impl FourVariableMap {
 
     fn populate_matrix_map(&mut self) {
         let miniterms = vec![
-            "m0",
-            "m1",
-            "m3",
-            "m2",
-            "m4",
-            "m5",
-            "m7",
-            "m6",
-            "m12",
-            "m13",
-            "m15",
-            "m14",
-            "m8",
-            "m9",
-            "m11",
-            "m10"
+            "0",
+            "1",
+            "3",
+            "2",
+            "4",
+            "5",
+            "7",
+            "6",
+            "12",
+            "13",
+            "15",
+            "14",
+            "8",
+            "9",
+            "11",
+            "10"
         ];
 
         for (index, miniterm) in miniterms.iter().enumerate() {
@@ -68,9 +69,14 @@ impl FourVariableMap {
         }
     }
 
+    #[allow(dead_code)]
     pub fn show_populated_matrix_map(&self) {
         for (miniterm, position) in &self.matrix_map {
             println!("{}={:?}", miniterm, position);
         }
+    }
+
+    pub fn get_miniterm_position(&self, miniterm: &String) {
+        println!("{:?}", self.matrix_map.get(miniterm));
     }
 }

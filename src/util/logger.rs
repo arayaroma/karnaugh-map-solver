@@ -28,7 +28,7 @@ impl Logger {
     }
 
     pub fn process_input(&mut self, message: &str) {
-        use std::io::{stdin, stdout};
+        use std::io::{ stdin, stdout };
         let mut input = String::new();
 
         print!("{}", message);

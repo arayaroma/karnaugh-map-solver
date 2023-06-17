@@ -17,6 +17,7 @@ impl ExpressionData {
         &self.expression
     }
 
+    #[allow(dead_code)]
     pub fn show_expression(&self) {
         println!("Expression: {}", self.get_expression());
     }
@@ -33,13 +34,17 @@ impl ExpressionData {
         &self.variables
     }
 
+    #[allow(dead_code)]
     pub fn show_variables(&self) {
         println!("Variables: {:?}", self.get_variables());
     }
 
     fn extract_variables(&mut self) {
         let variables: Vec<&str> = Self::trim_variables(self.get_expression());
-        let variables_owned: Vec<String> = variables.iter().map(|&var| var.to_string()).collect();
+        let variables_owned: Vec<String> = variables
+            .iter()
+            .map(|&var| var.to_string())
+            .collect();
         self.variables = variables_owned;
     }
 
@@ -47,7 +52,10 @@ impl ExpressionData {
         if let Some(parentheses_start) = expression.find('(') {
             if let Some(parentheses_end) = expression.find(')') {
                 let variables_str = &expression[parentheses_start + 1..parentheses_end];
-                return variables_str.split(',').map(|var| var.trim()).collect();
+                return variables_str
+                    .split(',')
+                    .map(|var| var.trim())
+                    .collect();
             }
         }
         Vec::new()
@@ -57,13 +65,17 @@ impl ExpressionData {
         &self.terms
     }
 
+    #[allow(dead_code)]
     pub fn show_terms(&self) {
         println!("Terms: {:?}", self.get_terms());
     }
 
     fn extract_terms(&mut self) {
         let terms: Vec<&str> = Self::trim_terms(self.get_expression());
-        let terms_owned: Vec<String> = terms.iter().map(|&term| term.to_string()).collect();
+        let terms_owned: Vec<String> = terms
+            .iter()
+            .map(|&term| term.to_string())
+            .collect();
         self.terms = terms_owned;
     }
 
@@ -71,7 +83,10 @@ impl ExpressionData {
         if let Some(sum) = expression.find("sum(") {
             if let Some(parentheses_end) = expression.rfind(')') {
                 let terms_str = &expression[sum + 4..parentheses_end];
-                return terms_str.split(',').map(|term| term.trim()).collect();
+                return terms_str
+                    .split(',')
+                    .map(|term| term.trim())
+                    .collect();
             }
         }
         Vec::new()

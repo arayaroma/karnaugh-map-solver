@@ -29,13 +29,27 @@ fn main() {
             file_reader_instance.expression_data.get_variables(),
             file_reader_instance.expression_data.get_terms()
         );
-
         prime_implicant_reducer.show_variables();
+        file_reader_instance.expression_data.show_terms();
     }
 
     let four_variable_map = FourVariableMap::new();
-    four_variable_map.show_populated_matrix();
-    four_variable_map.show_populated_matrix_map();
+    for term in file_reader_instance.expression_data.get_terms().iter() {
+        if
+            let Some(index) = file_reader_instance.expression_data
+                .get_terms()
+                .iter()
+                .position(|t| t == term)
+        {
+            println!(
+                "{}: {:?}",
+                term,
+                four_variable_map.get_miniterm_position(
+                    &file_reader_instance.expression_data.get_terms()[index]
+                )
+            );
+        }
+    }
 
     exit(0);
 }
