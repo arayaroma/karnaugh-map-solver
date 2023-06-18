@@ -4,6 +4,7 @@ pub struct Logger {
     input: String,
 }
 
+#[allow(warnings)]
 impl Logger {
     pub fn new() -> Self {
         Logger {

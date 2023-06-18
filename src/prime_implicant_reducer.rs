@@ -1,6 +1,5 @@
 pub struct PrimeImplicantReducer {
     variables_context: VariablesContext,
-    terms: Vec<String>,
     prime_implicants: Vec<String>,
 }
 
@@ -9,14 +8,15 @@ pub struct VariablesContext {
 }
 
 impl PrimeImplicantReducer {
-    pub fn new(variables: &Vec<String>, terms: &Vec<String>) -> Self {
+    #[allow(dead_code)]
+    pub fn new(variables: &Vec<String>) -> Self {
         PrimeImplicantReducer {
             variables_context: VariablesContext { variables: variables.to_vec() },
-            terms: terms.to_vec(),
             prime_implicants: Vec::new(),
         }
     }
 
+    #[allow(dead_code)]
     pub fn show_variables(&self) {
         println!("Parsed variables: {:?}", self.variables_context.variables)
     }
